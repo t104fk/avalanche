@@ -1,5 +1,6 @@
 #!/bin/bash
 export LANG=ja_JP.UTF-8
+export EDITOR=vim
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -15,3 +16,5 @@ PS1="\u@\h \W\$ "
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/"
 export JAVA=$JAVA_HOME/bin
 
+tmux
+zsh
