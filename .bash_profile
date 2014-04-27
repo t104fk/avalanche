@@ -16,5 +16,7 @@ PS1="\u@\h \W\$ "
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/"
 export JAVA=$JAVA_HOME/bin
 
-tmux
+if [ -z $TMUX ]; then
+  tmux
+fi
 zsh
