@@ -64,16 +64,6 @@ NeoBundleLazy 'basyura/unite-rails', {
     \   ]
     \ }}
 
-NeoBundleLazy 'alpaca-tc/unite-rails_best_practices', {
-    \ 'depends' : 'Shougo/unite.vim',
-    \ 'build' : {
-    \   'mac' : 'gem install rails_best_practices',
-    \   'unix' : 'gem install rails_best_practices',
-    \ },
-    \ 'autoload' : {
-    \   'unite_sources' : 'rails_best_practices'
-    \ }}
-
 NeoBundleLazy 'taka84u9/vim-ref-ri', {
     \ 'depends' : ['Shougo/unite.vim', 'thinca/vim-ref'],
     \ 'autoload' : {'filetypes' : 'g:my.ft.ruby_files' } }
