@@ -6,5 +6,7 @@ if [ -d "~/.zprezto" ]; then
   for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
+else
+  echo "zprezto dir already exists."
 fi
 
