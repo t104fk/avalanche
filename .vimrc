@@ -34,6 +34,7 @@ NeoBundleLazy 'Shougo/neosnippet', {
     \   'insert' : 1,
     \   'unite_sources' : ['snippet', 'neosnippet/user', 'neosnippet/runtime'],
     \ }}
+NeoBundle "Shougo/neosnippet-snippets"
 
 NeoBundleLazy 'tpope/vim-rails', {
     \ 'autoload' : {
