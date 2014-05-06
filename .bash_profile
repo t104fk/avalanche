@@ -16,6 +16,9 @@ PS1="\u@\h \W\$ "
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/"
 export JAVA=$JAVA_HOME/bin
 
+# node.js
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 if [ $SHLVL = 1 ]; then
   tmux a || tmux -f $HOME/.tmux.conf
 fi
