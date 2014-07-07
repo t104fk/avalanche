@@ -7,3 +7,4 @@ test -f ~/.vimrc  || ln -s $path/.vimrc ~/.vimrc
 test -f ~/.tmux.conf  || ln -s $path/.tmux.conf ~/.tmux.conf
 zsh init_zprezto.sh
 test -f ~/.zshrc  || ln -s $path/.zshrc ~/.zshrc
+test -f ~/.jshintrc || ln -s $path/.jshintrc ~/.jshintrc
