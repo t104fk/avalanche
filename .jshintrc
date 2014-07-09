@@ -14,7 +14,7 @@
   "quotmark": true,
   "undef": true,
   "unused": true,
-  "strict" true,
+  "strict": true,
   //"globalstrict": true,
   "trailing": true,
   "maxdepth": 3,
