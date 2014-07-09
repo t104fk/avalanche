@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "x`git config user.name`" == "xSET_ME_LOCALLY" ]; then
+  echo "fatal: user.name is not set locally."
+  exit 1
+fi
+
+if [ "x`git config user.email`" == "xSET_ME_LOCALLY" ]; then
+  echo "fatal: user.email is not set locally."
+  exit 1
+fi
+
