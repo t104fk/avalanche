@@ -10,7 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-unalias bower
-
 # Customize to your needs...
-if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+myzshrc="${ZDOTDIR:-$HOME}/.zshrc_me"
+if [ -s "$myzshrc" ]; then
+  source $myzshrc
+fi
+

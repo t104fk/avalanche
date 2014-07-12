@@ -1,0 +1,14 @@
+export LANG=ja_JP.UTF-8
+export EDITOR=vim
+
+if which rbenv > /dev/null; then
+  source ~/rbenv.sh
+fi
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+unalias bower
+
+if [ $SHLVL = 1 ]; then
+  tmux a || tmux -f $HOME/.tmux.conf
+fi
+

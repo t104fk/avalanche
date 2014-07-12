@@ -1,8 +1,11 @@
 #!/bin/bash
+# deprecated
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then
+  source ~/rbenv.sh
+fi
 
 # alias
 alias ls='ls -G'
@@ -22,4 +25,3 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 if [ $SHLVL = 1 ]; then
   tmux a || tmux -f $HOME/.tmux.conf
 fi
-zsh
