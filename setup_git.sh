@@ -12,3 +12,7 @@ if [ $init_temp -lt 1 ]; then
   echo "config init template."
 fi
 
+git config --global user.name  SET_ME_LOCALLY
+git config --global user.email SET_ME_LOCALLY
+git config --global branch.autosetuprebase always
+
