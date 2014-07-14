@@ -14,5 +14,4 @@ for file in ${DOTFILES[@]}
 do
   create_symlink $file
 done
-create_symlink rbenv.sh
 

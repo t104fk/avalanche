@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO: check ostype, and least environment.
+#function check_env(){}
+#function install_env(){}
+
+# TODO: mac only
 if ! which brew >/dev/null 2>&1; then
   echo "brew is not."
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"

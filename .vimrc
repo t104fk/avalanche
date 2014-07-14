@@ -88,6 +88,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'sudo.vim'
 
 filetype plugin indent on
 filetype indent on
