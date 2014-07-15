@@ -12,11 +12,7 @@ if ! which brew >/dev/null 2>&1; then
   brew install openssl readline
 fi
 
-if [ ! -d ~/.rbenv ]; then
-  echo "install rbenv."
-  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-fi
+sh ruby/rbenv_install.sh
 
 #TODO: if not exist, install
 if [ `cat /etc/shells | grep zsh | wc -l` -lt 1 ]; then
@@ -24,7 +20,7 @@ if [ `cat /etc/shells | grep zsh | wc -l` -lt 1 ]; then
   exit 1
 fi
 
-[ "/bin/zsh" != $SHELL ] && chsh -s `which zsh`
+[ "/usr/local/bin/zsh" != $SHELL ] && chsh -s /usr/local/bin/zsh
 
 sh create_symlink.sh
 sh setup_git.sh
