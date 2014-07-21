@@ -89,6 +89,8 @@ NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'sudo.vim'
+NeoBundle 'moznion/hateblo.vim'
+NeoBundle 'mattn/webapi-vim'
 
 filetype plugin indent on
 filetype indent on
@@ -171,4 +173,8 @@ syntax on
 "endif
 
 set clipboard=unnamed,autoselect
+
+if filereadable(expand('~/.vim.local/.hateblo.vim.local'))
+  source ~/.vim.local/.hateblo.vim.local
+endif
 

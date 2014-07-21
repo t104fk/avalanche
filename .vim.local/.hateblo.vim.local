@@ -1,0 +1,8 @@
+let g:hateblo_vim = {
+      \ 'user': 'takasing',
+      \ 'api_key': '',
+      \ 'api_endpoint': '',
+      \ 'WYSIWYG_mode': 0,
+      \ 'always_yes': 0,
+      \ 'edit_command': 'edit'
+      \ }

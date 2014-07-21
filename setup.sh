@@ -20,7 +20,7 @@ if [ `cat /etc/shells | grep zsh | wc -l` -lt 1 ]; then
   exit 1
 fi
 
-[ "/usr/local/bin/zsh" != $SHELL ] && chsh -s /usr/local/bin/zsh
+[ "/bin/zsh" != $SHELL ] && chsh -s /bin/zsh
 
 sh create_symlink.sh
 sh setup_git.sh
