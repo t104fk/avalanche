@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-if [ -d "~/.zprezto" ]; then
+if [ ! -d "~/.zprezto" ]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
   setopt EXTENDED_GLOB
   for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
