@@ -13,6 +13,7 @@
 #fi
 
 sh ruby/rbenv_install.sh
+sh nodebrew/setup_nodebrew.sh
 
 #TODO: if not exist, install
 if [ `cat /etc/shells | grep zsh | wc -l` -lt 1 ]; then
