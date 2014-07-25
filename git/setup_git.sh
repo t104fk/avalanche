@@ -15,4 +15,5 @@ fi
 git config --global user.name  SET_ME_LOCALLY
 git config --global user.email SET_ME_LOCALLY
 git config --global branch.autosetuprebase always
+git config --global push.default simple
 
