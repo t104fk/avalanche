@@ -1,0 +1,18 @@
+#tap 'phinze/homebrew-cask' || true
+#tap 'caskroom/versions' || true
+#tap 'homebrew/versions' || true
+
+install git || true
+install tmux || true
+install mysql55 || true
+link mysql55 --force
+
+cleanup
+
+install brew-cask || true
+
+cask install java6 || true
+cask install java7 || true
+
+cask cleanup
+
