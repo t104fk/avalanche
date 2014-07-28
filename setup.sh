@@ -23,7 +23,7 @@ fi
 
 [ "/bin/zsh" != $SHELL ] && chsh -s /bin/zsh
 
-zsh zsh/init_zprezto.zsh
+sh zsh/init_oh-my-zsh.sh
 sh vim/setup_vim.sh
 sh tmux/setup_tmux.sh
 
