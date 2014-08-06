@@ -6,6 +6,7 @@ install git || true
 install tmux || true
 install mysql55 && link mysql55 --force || true
 install reattach-to-user-namespace
+install csshx
 
 cleanup
 

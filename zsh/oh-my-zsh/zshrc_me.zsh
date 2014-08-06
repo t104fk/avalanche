@@ -9,6 +9,12 @@ eval "$(rbenv init - zsh)"
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# improving the performance of zsh git plugin
+__git_files() { _files }
+
+# tmuxinator
+source $HOME/.bin/tmuxinator.zsh
+
 # tmux. must be last.
 if [ $SHLVL = 1 ]; then
   tmux a || tmux -f $HOME/.tmux.conf
