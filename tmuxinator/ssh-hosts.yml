@@ -1,0 +1,17 @@
+# ~/.tmuxinator/ssh-hosts.yml
+
+name: ssh-hosts
+root: ~/
+
+windows:
+  - test:
+      layout: tiled
+      panes:  
+        - 
+        - ssh $hostname
+        - ssh $hostname
+  - g1:
+      layout: tiled
+      panes:
+        -
+        - ssh $hostname
