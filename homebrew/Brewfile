@@ -1,12 +1,13 @@
-#tap 'phinze/homebrew-cask' || true
-#tap 'caskroom/versions' || true
-#tap 'homebrew/versions' || true
+tap 'phinze/homebrew-cask' || true
+tap 'caskroom/versions' || true
+tap 'homebrew/versions' || true
 
 install git || true
 install tmux || true
 install mysql55 && link mysql55 --force || true
-install reattach-to-user-namespace
-install csshx
+install reattach-to-user-namespace || true
+install csshx || true
+install nkf || true
 
 cleanup
 
