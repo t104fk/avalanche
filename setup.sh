@@ -4,6 +4,7 @@
 #function check_env(){}
 #function install_env(){}
 
+sh homebrew/setup_homebrew.sh
 sh ruby/install_rbenv.sh
 sh nodebrew/setup_nodebrew.sh
 
