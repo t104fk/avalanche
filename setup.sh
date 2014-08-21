@@ -1,24 +1,28 @@
 #!/bin/bash
 
 # TODO: check ostype, and least environment.
-#function check_env(){}
 #function install_env(){}
-
-sh homebrew/setup_homebrew.sh
-sh ruby/install_rbenv.sh
-sh nodebrew/setup_nodebrew.sh
-
-#TODO: if not exist, install
-if [ `cat /etc/shells | grep zsh | wc -l` -lt 1 ]; then
-  echo "cannot use zsh."
-  exit 1
+OSTYPE=`uname -a | awk '{print $1}'`
+if [ "xDarwin" = "x$OSTYPE" ]; then
+  sh homebrew/setup_homebrew.sh
 fi
+sh ruby/install_rbenv.sh
+#sh nodebrew/setup_nodebrew.sh
 
-[ "/bin/zsh" != $SHELL ] && chsh -s /bin/zsh
+if [ "/bin/zsh" != $SHELL ]; then
+  case $OSTYPE in
+    Darwin)
+      chsh -s /bin/zsh
+      ;;
+    Linux)
+      # TODO: ubuntu, centos
+      sudo chsh ec2-user -s /bin/zsh
+      ;;
+  esac
+fi
 
 sh zsh/oh-my-zsh/init_oh-my-zsh.sh
 sh vim/setup_vim.sh
-sh tmux/setup_tmux.sh
 
 sh create_symlink.sh
 sh git/setup_git.sh

@@ -15,5 +15,7 @@ do
   create_symlink $file ~/$file
 done
 
-create_symlink utils/ssh-copy-id /usr/local/bin/ssh-copy-id
+if [ "xDarwin" = "x`uname -a | awk '{print $1}'`" ]; then
+  create_symlink utils/ssh-copy-id /usr/local/bin/ssh-copy-id
+fi
 
