@@ -8,3 +8,5 @@ if ! which brew 2>/dev/null; then
   brew install openssl readline
 fi
 
+sh brewfile.sh
+
