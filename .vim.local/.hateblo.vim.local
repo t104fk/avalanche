@@ -1,3 +1,6 @@
+NeoBundle 'moznion/hateblo.vim'
+NeoBundle 'mattn/webapi-vim'
+
 let g:hateblo_vim = {
       \ 'user': 'takasing',
       \ 'api_key': '',
