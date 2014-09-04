@@ -1,26 +1,32 @@
 #!/bin/bash
 
 TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions')
-# TODO: check existing taps
-for t in $TAPS
+for t in ${TAPS[@]}
 do
-  brew tap $t || true
+  exists=`brew tap | grep $t | wc -l`
+  [ $exists -lt 1 ] && brew tap $t
 done
 
-PACKAGES=(git tmux mysql55 reattach-to-user-namespace csshx nkf brew-cask)
-for p in $PACKAGES
+PACKAGES=(git tmux mysql55 reattach-to-user-namespace csshx nkf brew-cask htop)
+for p in ${PACKAGES[@]}
 do
-  brew install $p || true
+  brew list $p >& /dev/null
+  [ $? -eq 0 ] && continue
+  if [ "xmysql55" = "x$p" ]; then
+    brew install $p && brew link $p --force
+  else
+    brew install $p
+  fi
 done
-install mysql55 && link mysql55 --force || true
 
-cleanup
+brew cleanup
 
 CASKS=(java6 java7)
-for c in $CASKS
+for c in ${CASKS[@]}
 do
-  brew cask install $c || true
+  brew cask list $c >& /dev/null
+  [ $? -ne 0 ] && brew cask install $c
 done
 
-cask cleanup
+brew cask cleanup
 
