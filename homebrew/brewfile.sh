@@ -1,13 +1,13 @@
 #!/bin/bash
 
-TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions')
+TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco' 'motemen/ghq')
 for t in ${TAPS[@]}
 do
   exists=`brew tap | grep $t | wc -l`
   [ $exists -lt 1 ] && brew tap $t
 done
 
-PACKAGES=(git tmux mysql55 reattach-to-user-namespace csshx nkf brew-cask htop)
+PACKAGES=(git tmux mysql55 reattach-to-user-namespace csshx nkf brew-cask htop peco ghq)
 for p in ${PACKAGES[@]}
 do
   brew list $p >& /dev/null
