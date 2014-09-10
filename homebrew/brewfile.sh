@@ -7,7 +7,7 @@ do
   [ $exists -lt 1 ] && brew tap $t
 done
 
-PACKAGES=(git tmux mysql55 reattach-to-user-namespace csshx nkf brew-cask htop peco ghq wget)
+PACKAGES=(git tmux mysql55 reattach-to-user-namespace csshx nkf brew-cask htop peco ghq wget maven jq)
 for p in ${PACKAGES[@]}
 do
   brew list $p >& /dev/null
