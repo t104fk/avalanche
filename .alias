@@ -1,0 +1,4 @@
+#!/bin/bash
+alias be='bundle exec'
+alias rails='bundle exec rails'
+alias rake='bundle exec rake'

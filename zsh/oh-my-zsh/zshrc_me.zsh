@@ -15,6 +15,9 @@ __git_files() { _files }
 # tmuxinator
 source $HOME/.bin/tmuxinator.zsh
 
+# load alias
+source $HOME/.alias
+
 # tmux. must be last.
 if [ $SHLVL = 1 ]; then
   tmux a || tmux -f $HOME/.tmux.conf
