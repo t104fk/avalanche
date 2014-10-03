@@ -9,7 +9,7 @@ function create_symlink() {
   fi
 }
 
-DOTFILES=(.vimrc .tmux.conf .jshintrc .git_template .vim.local .bin .alias)
+DOTFILES=(.vimrc .tmux.conf .jshintrc .git_template .vim.local .bin .alias .peco)
 for file in ${DOTFILES[@]}
 do
   create_symlink $file ~/$file

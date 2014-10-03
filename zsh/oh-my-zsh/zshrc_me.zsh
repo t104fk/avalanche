@@ -18,6 +18,24 @@ source $HOME/.bin/tmuxinator.zsh
 # load alias
 source $HOME/.alias
 
+# functions
+## history
+function peco-select-history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(\history -n 1 | \
+    eval $tac | \
+    peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
 # tmux. must be last.
 if [ $SHLVL = 1 ]; then
   tmux a || tmux -f $HOME/.tmux.conf
