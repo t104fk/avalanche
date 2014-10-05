@@ -24,7 +24,8 @@ PACKAGES=(\
   gradle\
   redis\
   tree \
-  watch
+  watch \
+  nginx
 )
 for p in ${PACKAGES[@]}
 do
