@@ -25,7 +25,8 @@ PACKAGES=(\
   redis\
   tree \
   watch \
-  nginx
+  nginx \
+  rrdtool
 )
 for p in ${PACKAGES[@]}
 do
