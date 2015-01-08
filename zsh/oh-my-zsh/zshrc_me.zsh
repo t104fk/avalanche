@@ -18,6 +18,9 @@ source $HOME/.bin/tmuxinator.zsh
 # load alias
 source $HOME/.alias
 
+# environments
+source ~/.oracle_client
+
 # functions
 ## history
 function peco-select-history() {

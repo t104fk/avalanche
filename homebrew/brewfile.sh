@@ -26,7 +26,9 @@ PACKAGES=(\
   tree \
   watch \
   nginx \
-  rrdtool
+  rrdtool \
+  rlwrap \
+  tig
 )
 for p in ${PACKAGES[@]}
 do
