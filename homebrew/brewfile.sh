@@ -28,8 +28,7 @@ PACKAGES=(\
   nginx \
   rrdtool \
   rlwrap \
-  tig \
-  wireshark
+  tig
 )
 for p in ${PACKAGES[@]}
 do
