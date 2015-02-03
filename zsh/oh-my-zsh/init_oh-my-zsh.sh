@@ -5,6 +5,5 @@ if [ ! -d ~/.oh-my-zsh ]; then
   git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
   ln -f $(cd $(dirname $0); pwd)/zshrc_me.zsh ~/.oh-my-zsh/custom/zshrc_me.zsh
-  exec zsh
 fi
 
