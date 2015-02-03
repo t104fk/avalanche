@@ -11,6 +11,10 @@ if [ "/bin/zsh" != $SHELL ]; then
     sudo chsh ec2-user -s /bin/zsh
   else
     echo "we doesn't support your platform."
+    return
+  fi
+  if [ $? -ne 0 ];then
+    echo "exec zsh" >> ~/.bash_profile
   fi
 fi
 
