@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ `uname -a | awk '{print $1}'` = "Darwin" ];then
+if [ `uname -a | awk '{print $1}'` != "Darwin" ];then
   echo "you don't need to install homebrew."
   exit 0
 fi
