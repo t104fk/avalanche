@@ -39,6 +39,10 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# override theme
+ZSH_THEME="takasing"
+export ZSH_THEME
+
 # tmux. must be last.
 if [ $SHLVL = 1 ]; then
   tmux a || tmux -f $HOME/.tmux.conf
