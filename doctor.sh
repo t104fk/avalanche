@@ -4,7 +4,7 @@ UNAME=`uname -a | awk '{print $1}'`
 case $UNAME in
   Linux)
     echo "Linux"
-    COMMANDS=(ruby git tmux rbenv zsh)
+    COMMANDS=(ruby git tmux rbenv zsh gcc)
     ;;
   Darwin)
     echo "MaxOSX"
