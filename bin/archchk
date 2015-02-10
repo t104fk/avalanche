@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ `uname -a | awk '{print $1}'` = "Darwin" ];then
+  echo "MAC"
+elif [ -f /etc/redhat-release ];then
+  echo "REDHAT"
+elif [ -f /etc/system-release ];then
+  echo "AMAZON"
+else
+  echo "UNKNOWN"
+fi
+

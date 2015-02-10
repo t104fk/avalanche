@@ -2,12 +2,7 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export VISUAL=vim
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+source $HOME/.path
 
 # improving the performance of zsh git plugin
 __git_files() { _files }

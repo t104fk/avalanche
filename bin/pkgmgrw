@@ -1,0 +1,3 @@
+#!/bin/bash
+current=$(cd `dirname $0`;pwd)
+arch=`$current/archchk`
