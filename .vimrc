@@ -174,8 +174,7 @@ syntax on
 
 set clipboard=unnamed,autoselect
 
-if filereadable(expand('~/.vim.local/.hateblo.vim.local'))
-  source ~/.vim.local/.hateblo.vim.local
-  source ~/.vim.local/.evervim.vim.local
-endif
+source ~/.vim.local/.hateblo.vim.local
+source ~/.vim.local/.evervim.vim.local
+source ~/.vim.local/.python.vim.local
 
