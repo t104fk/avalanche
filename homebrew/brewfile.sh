@@ -29,7 +29,9 @@ PACKAGES=(\
   rrdtool \
   rlwrap \
   tig \
-  hiredis
+  hiredis \
+  go \
+  mercurial
 )
 for p in ${PACKAGES[@]}
 do
