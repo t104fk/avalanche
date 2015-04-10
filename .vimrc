@@ -177,4 +177,6 @@ set clipboard=unnamed,autoselect
 source ~/.vim.local/.hateblo.vim.local
 source ~/.vim.local/.evervim.vim.local
 source ~/.vim.local/.python.vim.local
+source ~/.vim.local/.go.vim.local
+source ~/.vim.local/.markdown.vim.local
 
