@@ -10,72 +10,18 @@ if has('vim_starting')
   call neobundle#end()
 endif
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-if has("lua")
-  NeoBundleLazy 'Shougo/neocomplete', { 'autoload' : {
-    \ 'insert' : 1,
-    \ }}
-else
-  NeoBundleLazy 'Shougo/neocomplete', {
-    \ 'autoload' : {
-    \ 'insert' : 1,
-    \ },
-    \ }
-endif
+source ~/.vim.local/.Shougo.vimrc
 
-NeoBundleLazy 'Shougo/neosnippet', {
-    \ 'autoload' : {
-    \   'commands' : ['NeoSnippetEdit', 'NeoSnippetSource'],
-    \   'filetypes' : 'snippet',
-    \   'insert' : 1,
-    \   'unite_sources' : ['snippet', 'neosnippet/user', 'neosnippet/runtime'],
-    \ }}
-NeoBundle "Shougo/neosnippet-snippets"
-
-NeoBundleLazy 'tpope/vim-rails', {
-    \ 'autoload' : {
-    \   'filetypes' : ['haml', 'ruby', 'eruby'] 
-    \ }}
-
-NeoBundleLazy 'alpaca-tc/vim-endwise.git', {
+NeoBundleLazy 'tpope/vim-endwise', {
     \ 'autoload' : {
     \   'insert' : 1,
     \ }}
 
-NeoBundleLazy 'edsono/vim-matchit', {
-    \ 'autoload' : {
-    \   'filetypes' : 'ruby',
-    \   'mappings' : ['nx', '%']
-    \ }}
-
-NeoBundleLazy 'basyura/unite-rails', {
-    \ 'depends' : 'Shougo/unite.vim',
-    \ 'autoload' : {
-    \   'unite_sources' : [
-    \     'rails/bundle', 'rails/bundle_gem', 'rails/config',
-    \     'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
-    \     'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
-    \     'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
-    \     'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/scheme', 'rails/spec',
-    \     'rails/stylesheet', 'rails/view'
-    \   ]
-    \ }}
+source $VIMRUNTIME/macros/matchit.vim
 
 NeoBundleLazy 'taka84u9/vim-ref-ri', {
     \ 'depends' : ['Shougo/unite.vim', 'thinca/vim-ref'],
     \ 'autoload' : {'filetypes' : 'g:my.ft.ruby_files' } }
-
-NeoBundleLazy 'alpaca-tc/neorspec.vim', {
-    \ 'depends' : ['alpaca-tc/vim-rails', 'tpope/vim-dispatch'],
-    \ 'autoload' : {
-    \   'commands' : ['RSpec', 'RSpecAll', 'RSpecCurrent', 'RSpecNearest', 'RSpecRetry']
-    \ }}
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
     \ 'depends' : 'Shougo/vimproc',
@@ -83,40 +29,12 @@ NeoBundleLazy 'alpaca-tc/alpaca_tags', {
     \   'commands' : ['AlpacaTagsUpdate', 'AlpacaTagsSet', 'AlpacaTagsBundle']
     \ }}
 
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'sudo.vim'
 
-filetype plugin indent on
-filetype indent on
-" plugin management done.
 
-"------------------------------
-" encoding
-set encoding=utf-8
-set fileencoding=utf-8
-"------------------------------
-set nocompatible
-set number
-" TODO:per file type
-set shiftwidth=2
-set tabstop=2
-set hlsearch
-
-set noswapfile
-set nocompatible
-set autoindent
-set smartindent
-set expandtab
-set ignorecase
-"------------------------------
-" highlight
-syntax on
 "set cursorline
 "augroup cch
 "  autocmd! cch
@@ -172,11 +90,12 @@ syntax on
 "  set conceallevel=2 concealcursor=i
 "endif
 
-set clipboard=unnamed,autoselect
+source ~/.vim.local/.hateblo.vimrc
+source ~/.vim.local/.evervim.vimrc
+source ~/.vim.local/.ruby.vimrc
+source ~/.vim.local/.python.vimrc
+source ~/.vim.local/.go.vimrc
+source ~/.vim.local/.markdown.vimrc
+source ~/.vim.local/.js.vimrc
 
-source ~/.vim.local/.hateblo.vim.local
-source ~/.vim.local/.evervim.vim.local
-source ~/.vim.local/.python.vim.local
-source ~/.vim.local/.go.vim.local
-source ~/.vim.local/.markdown.vim.local
-
+source ~/.vim.local/.env.vimrc
