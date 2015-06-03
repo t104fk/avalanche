@@ -18,3 +18,11 @@ if [ -d $HOME/.svm ];then
   export PATH=$SCALA_HOME/bin:$SVM_HOME/bin:$PATH
 fi
 
+# goenv
+export GOENVHOME=~/.goenv
+source $GOENVHOME/shellscripts/goenvwrapper.sh
+export GOENVGOROOT=$GOENVHOME
+export GOROOT=$GOENVHOME/go
+export GOPATH=~/go
+export PATH=$GOPATH/bin:$GOENVHOME/go/bin:$PATH
+

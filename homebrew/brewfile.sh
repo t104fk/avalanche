@@ -31,7 +31,8 @@ PACKAGES=(\
   tig \
   hiredis \
   go \
-  mercurial
+  mercurial \
+  postgresql
 )
 for p in ${PACKAGES[@]}
 do

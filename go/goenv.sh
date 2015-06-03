@@ -1,6 +1,5 @@
 #!/bin/bash
 GOENVROOT=~/.goenv
-BINDIR=/usr/local/bin
 
 for p in go git hg
 do
@@ -18,6 +17,5 @@ if ! type goenv &> /dev/null; then
     cd ~/.goenv
     go build -o goenv *.go
     chmod +x goenv
-    cp goenv $BINDIR
   fi
 fi
