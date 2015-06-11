@@ -19,3 +19,5 @@ set ignorecase
 
 set clipboard=unnamed,autoselect
 
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
+
