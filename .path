@@ -19,10 +19,10 @@ if [ -d $HOME/.svm ];then
 fi
 
 # goenv
-export GOENVHOME=~/.goenv
-source $GOENVHOME/shellscripts/goenvwrapper.sh
-export GOENVGOROOT=$GOENVHOME
-export GOROOT=$GOENVHOME/go
+export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=~/go
-export PATH=$GOPATH/bin:$GOENVHOME/go/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
+
+# terraform
+export PATH=/usr/local/terraform:$PATH
 

@@ -15,3 +15,4 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 NeoBundle 'elzr/vim-json'
 "NeoBundle 'mattn/jscomplete-vim'
 "let g:jscomplete_use = ['dom', 'moz', 'es6th']
+NeoBundle 'kchmck/vim-coffee-script'

@@ -40,6 +40,8 @@ do
   [ $? -eq 0 ] && continue
   if [ "xmysql55" = "x$p" ]; then
     brew install $p && brew link $p --force
+  elif [ "xgo" = "x$p" ]; then
+    brew install $p --with-cc-all
   else
     brew install $p
   fi
