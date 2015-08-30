@@ -97,6 +97,7 @@ source ~/.vim.local/.python.vimrc
 source ~/.vim.local/.go.vimrc
 source ~/.vim.local/.markdown.vimrc
 source ~/.vim.local/.js.vimrc
+source ~/.vim.local/.html.vimrc
 source ~/.vim.local/.docker.vimrc
 
 source ~/.vim.local/.env.vimrc

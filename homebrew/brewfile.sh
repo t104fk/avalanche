@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco' 'motemen/ghq')
+TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco' 'motemen/ghq' 'homebrew/fuse')
 for t in ${TAPS[@]}
 do
   exists=`brew tap | grep $t | wc -l`
@@ -32,7 +32,8 @@ PACKAGES=(\
   hiredis \
   go \
   mercurial \
-  postgresql
+  postgresql \
+  ext4fuse
 )
 for p in ${PACKAGES[@]}
 do
