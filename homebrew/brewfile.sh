@@ -7,6 +7,15 @@ do
   [ $exists -lt 1 ] && brew tap $t
 done
 
+CASKS=(java6 java7 osxfuse chefdk)
+for c in ${CASKS[@]}
+do
+  brew cask list $c >& /dev/null
+  [ $? -ne 0 ] && brew cask install $c
+done
+
+brew cask cleanup
+
 PACKAGES=(\
   git\
   tmux\
@@ -33,7 +42,9 @@ PACKAGES=(\
   go \
   mercurial \
   postgresql \
-  ext4fuse
+  ext4fuse \
+  stoken \
+  openconnect
 )
 for p in ${PACKAGES[@]}
 do
@@ -49,13 +60,4 @@ do
 done
 
 brew cleanup
-
-CASKS=(java6 java7)
-for c in ${CASKS[@]}
-do
-  brew cask list $c >& /dev/null
-  [ $? -ne 0 ] && brew cask install $c
-done
-
-brew cask cleanup
 
