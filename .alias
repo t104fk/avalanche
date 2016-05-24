@@ -1,6 +1,0 @@
-#!/bin/bash
-alias be='bundle exec'
-alias bi='bundle install'
-alias rails='bundle exec rails'
-alias rake='bundle exec rake'
-alias orablog='sqlplus ameblo/ameblo@oratest'
