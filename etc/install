@@ -91,16 +91,16 @@ logging() {
   timestamp; ink "$color" "$text"; echo
 }
 
-log_fail() {
-  logging ERROR "$1" 1>&2
+log_warn() {
+  logging WARN "$1"
 }
 
 # functions
 
-dotfiles_download() {
+download_dotfiles() {
   if [ -d "$DOTPATH" ]; then
-    log_fail "$DOTPATH: already exists"
-    exit 1
+    log_warn "$DOTPATH: already exists"
+    return 1
   fi
 
   e_newline
@@ -112,6 +112,26 @@ dotfiles_download() {
   e_newline && e_done "Download"
 }
 
+deploy_dotfiles() {
+  e_newline
+  e_header "Deploying dotfiles..."
+  if [ ! -d $DOTPATH ]; then
+    log_fail "$DOTPATH: not found"
+    exit 1
+  fi
+
+  cd "$DOTPATH"
+
+  echo "deploy here"
+
+  e_newline && e_done "Deploy"
+}
+
+install_dotfiles() {
+  download_dotfiles
+  deploy_dotfiles
+}
+
 # executions
 
 if [ -z "${DOTPATH:-}" ]; then
@@ -119,4 +139,4 @@ if [ -z "${DOTPATH:-}" ]; then
 fi
 DOTFILES_GITHUB="https://github.com/takasing/avalanche.git"; export DOTFILES_GITHUB
 
-dotfiles_download
+install_dotfiles

@@ -19,44 +19,23 @@ brew cask cleanup
 PACKAGES=(\
   git\
   tmux\
-  mysql55\
   reattach-to-user-namespace\
   csshx\
   nkf\
   brew-cask\
   htop\
   peco\
-  ghq\
   wget\
-  maven\
   jq\
-  gradle\
-  redis\
   tree \
   watch \
-  nginx \
-  rrdtool \
-  rlwrap \
-  tig \
-  hiredis \
-  go \
-  mercurial \
-  postgresql \
-  ext4fuse \
-  stoken \
-  openconnect
+  tig
 )
 for p in ${PACKAGES[@]}
 do
   brew list $p >& /dev/null
   [ $? -eq 0 ] && continue
-  if [ "xmysql55" = "x$p" ]; then
-    brew install $p && brew link $p --force
-  elif [ "xgo" = "x$p" ]; then
-    brew install $p --with-cc-all
-  else
-    brew install $p
-  fi
+  brew install $p
 done
 
 brew cleanup
