@@ -91,6 +91,10 @@ logging() {
   timestamp; ink "$color" "$text"; echo
 }
 
+log_info() {
+  logging INFO "$1"
+}
+
 log_warn() {
   logging WARN "$1"
 }
@@ -122,14 +126,19 @@ deploy_dotfiles() {
 
   cd "$DOTPATH"
 
-  echo "deploy here"
+  if [ -z "$DOTFILES" ]; then
+    log_fail "DOTPATH is not found"
+    exit 1
+  fi
+
+  ABSOLUREPATH=$(cd $(dirname $0);pwd)
+
+  for f in ${DOTFILES[@]}
+  do
+    ln -sfv $ABSOLUREPATH/$f $HOME/$f
+  done
 
   e_newline && e_done "Deploy"
-}
-
-install_dotfiles() {
-  download_dotfiles
-  deploy_dotfiles
 }
 
 # executions
@@ -138,5 +147,15 @@ if [ -z "${DOTPATH:-}" ]; then
   DOTPATH=~/.dotfiles; export DOTPATH
 fi
 DOTFILES_GITHUB="https://github.com/takasing/avalanche.git"; export DOTFILES_GITHUB
+DOTFILES=(\
+  .git_template \
+  .path \
+  .peco \
+  .tigrc \
+  .tmux.conf \
+  .vim.local \
+  .vimrc
+)
 
-install_dotfiles
+download_dotfiles
+deploy_dotfiles
