@@ -14,9 +14,26 @@ e_done() {
   printf " \033[37;1m%s\033[m...\033[32mOK\033[m\n" "✔ $*"
 }
 
+e_arrow() {
+  printf " \033[37;1m%s\033[m\n" "➜ $*"
+}
+
 is_exists() {
   which "$1" >/dev/null 2>&1
   return $?
+}
+
+contains() {
+  string="$1"
+  substring="$2"
+  # pattern matching
+  # if string is '/bin/bash' and substring is 'bash',
+  # ${string#*$substring} is ''(pattern matching and remove by substring)
+  if [ "${string#*$substring}" != "$string" ]; then
+    return 0
+  else
+    return 1
+  fi
 }
 
 ink() {
@@ -91,12 +108,47 @@ logging() {
   timestamp; ink "$color" "$text"; echo
 }
 
+log_pass() {
+  logging SUCCESS "$1"
+}
+
 log_info() {
   logging INFO "$1"
 }
 
 log_warn() {
   logging WARN "$1"
+}
+
+lower() {
+  # standard input
+  if [ $# -eq 0 ]; then
+    cat <&0
+  # specify parameter
+  elif [ $# -eq 1 ]; then
+    # file
+    if [ -f "$1" -a -r "$1" ]; then
+      cat "$1"
+    # string
+    else
+      echo "$1"
+    fi
+  else
+    return 1
+  fi | tr "[:upper:]" "[:lower:]"
+}
+
+ostype() {
+  uname | lower
+}
+
+detect_os() {
+  export PLATFORM
+  case "$(ostype)" in
+    *'linux'*) PLATFORM="linux" ;;
+    *'darwin'*) PLATFORM="osx" ;;
+    *) PLATFORM="unknown" ;;
+  esac
 }
 
 # functions
@@ -131,14 +183,17 @@ deploy_dotfiles() {
     exit 1
   fi
 
-  ABSOLUREPATH=$(cd $(dirname $0);pwd)
-
   for f in ${DOTFILES[@]}
   do
-    ln -sfv $ABSOLUREPATH/$f $HOME/$f
+    ln -sfv $DOTPATH/$f $HOME/$f
   done
 
   e_newline && e_done "Deploy"
+}
+
+initialize_dotfiles() {
+  detect_os
+  bash $DOTPATH/etc/init/init.sh
 }
 
 # executions
@@ -159,3 +214,4 @@ DOTFILES=(\
 
 download_dotfiles
 deploy_dotfiles
+initialize_dotfiles

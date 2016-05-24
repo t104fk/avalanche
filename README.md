@@ -1,5 +1,11 @@
 avalanche
 =========
 
-several settings for terminal.
+my dotfiles
+
+## Quick install
+
+```sh
+curl -sL https://raw.githubusercontent.com/takasing/avalanche/master/etc/install | sh
+```
 
