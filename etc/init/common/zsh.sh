@@ -29,7 +29,10 @@ if ! contains "${SHELL:-}" "zsh"; then
 
   if [ -x "$zsh_path" ]; then
     # child user
-    chsh -s "$zsh_path" "$USER"
+    #chsh -s "$zsh_path" "$USER"
+    # TODO: osx cannot execute chsh correctly
+    echo "export SHELL=$zsh_path" >> ~/.bash_profile
+    echo "exec $zsh_path -l" >> ~/.bash_profile
     log_pass "Change shell to $zsh_path for $USER successfully"
     # TODO: root
   else
