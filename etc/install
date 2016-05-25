@@ -224,14 +224,8 @@ if echo "$-" | grep -q "i"; then
   log_info "load as a vital"
   VITALIZED=1
   export VITALIZED
+  : return
 else
-  log_info "$VITALIZED"
-  log_info "$-"
-  if [ "${VITALIZED:=0}" = 1 ]; then
-    log_warn "already vitalized"
-    exit
-  fi
-
   log_info "execute as a script"
   # echo AVALANCHE logo
   install_dotfiles
