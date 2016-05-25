@@ -1,20 +1,14 @@
 #!/bin/bash
 
-TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco' 'motemen/ghq' 'homebrew/fuse')
+set -eu
+source "$DOTPATH"/etc/lib/vital.sh
+
+TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco')
 for t in ${TAPS[@]}
 do
   exists=`brew tap | grep $t | wc -l`
   [ $exists -lt 1 ] && brew tap $t
 done
-
-CASKS=(java6 java7 osxfuse chefdk)
-for c in ${CASKS[@]}
-do
-  brew cask list $c >& /dev/null
-  [ $? -ne 0 ] && brew cask install $c
-done
-
-brew cask cleanup
 
 PACKAGES=(\
   git\
@@ -39,4 +33,15 @@ do
 done
 
 brew cleanup
+
+#CASKS=(java6 java7 osxfuse chefdk)
+#for c in ${CASKS[@]}
+#do
+#  brew cask list $c >& /dev/null
+#  [ $? -ne 0 ] && brew cask install $c
+#done
+
+#brew cask cleanup
+
+log_pass "Success to install brew packages"
 

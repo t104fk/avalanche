@@ -10,9 +10,6 @@ __git_files() { _files }
 # tmuxinator
 source $HOME/.bin/tmuxinator.zsh
 
-# load alias
-source $HOME/.alias
-
 # functions
 ## history
 function peco-select-history() {
