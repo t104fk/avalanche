@@ -7,7 +7,7 @@ if ! is_exists "tmux"; then
   case "$PLATFORM" in
     osx)
       if is_exists "brew"; then
-        log_echo "Install tmux with Homebrew"
+        log_info "Install tmux with Homebrew"
         brew install tmux
       else
         log_fail "error: require: Homebrew"
@@ -15,7 +15,7 @@ if ! is_exists "tmux"; then
       fi
       ;;
     linux)
-      echo "TODO: support Linux"
+      log_warn "TODO: support Linux"
       ;;
   esac
 fi

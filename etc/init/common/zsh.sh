@@ -9,7 +9,7 @@ if ! is_exists "zsh"; then
   case "$PLATFORM" in
     osx)
       if has "brew"; then
-        log_echo "Install zsh with Homebrew"
+        log_info "Install zsh with Homebrew"
         brew install zsh
       else
         log_fail "error: require: Homebrew"
