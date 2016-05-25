@@ -203,7 +203,7 @@ initialize_dotfiles() {
 
 install_dotfiles() {
 
-  if [ ! -z ${DOWNLOADED:-0} ]; then
+  if [ ${DOWNLOADED:-0} = 1 ]; then
     exit
   fi
 
