@@ -225,6 +225,8 @@ if echo "$-" | grep -q "i"; then
   VITALIZED=1
   export VITALIZED
 else
+  log_info "$VITALIZED"
+  log_info "$-"
   if [ "${VITALIZED:=0}" = 1 ]; then
     log_warn "already vitalized"
     exit
