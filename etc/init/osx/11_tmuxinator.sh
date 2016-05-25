@@ -6,8 +6,8 @@ source "$DOTPATH"/etc/lib/vital.sh
 if ! is_exists "mux"; then
   case "$PLATFORM" in
     osx)
-      if has "brew"; then
-        log_echo "Install zsh with tmuxinator"
+      if is_exists "brew"; then
+        log_echo "Install tmuxinator with Homebrew"
         $(cd $DOTPATH && gem install tmuxinator)
       else
         log_fail "error: require: Homebrew"
