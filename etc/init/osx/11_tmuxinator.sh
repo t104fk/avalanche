@@ -8,7 +8,7 @@ if ! is_exists "mux"; then
     osx)
       if is_exists "brew"; then
         log_info "Install tmuxinator with Homebrew"
-        $(cd $DOTPATH && gem install tmuxinator)
+        $(cd $DOTPATH && sudo gem install tmuxinator)
       else
         log_fail "error: require: Homebrew"
         exit 1
