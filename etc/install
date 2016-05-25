@@ -230,7 +230,8 @@ DOTFILES=(\
 # echo AVALANCHE logo
 
 install_dotfiles
-e_newline
-e_arrow "Restarting shell($SHELL)..."
+# TODO: do not work helpers here...
+#e_newline
+#e_arrow "Restarting shell($SHELL)..."
 exec "$SHELL"
 
