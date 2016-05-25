@@ -179,7 +179,7 @@ deploy_dotfiles() {
   cd "$DOTPATH"
 
   if [ -z "$DOTFILES" ]; then
-    log_fail "DOTPATH is not found"
+    log_fail "DOTFILES is not found"
     exit 1
   fi
 
@@ -219,6 +219,7 @@ DOTFILES=(\
   .vimrc
 )
 
+echo "-----------------"
 log_info "$-"
 if echo "$-" | grep -q "i"; then
   log_info "load as a vital"
