@@ -202,17 +202,16 @@ initialize_dotfiles() {
 }
 
 install_dotfiles() {
-
-  if [ ${DOWNLOADED:-0} = 1 ]; then
-    return
-  fi
-
   download_dotfiles
   deploy_dotfiles
   initialize_dotfiles
 }
 
 # executions
+
+if [ ${DOWNLOADED:-0} = 1 ]; then
+  return
+fi
 
 if [ -z "${DOTPATH:-}" ]; then
   DOTPATH=~/.dotfiles; export DOTPATH
@@ -228,8 +227,8 @@ DOTFILES=(\
   .vimrc
 )
 
-log_info "execute as a script: $-"
 # echo AVALANCHE logo
+
 install_dotfiles
 e_newline
 e_arrow "Restarting shell($SHELL)..."
