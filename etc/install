@@ -179,10 +179,11 @@ deploy_dotfiles() {
   cd "$DOTPATH"
 
   if [ -z "$DOTFILES" ]; then
-    log_fail "DOTPATH is not found"
+    log_fail "DOTFILES is not found"
     exit 1
   fi
 
+  # TODO: too many nest if directory
   for f in ${DOTFILES[@]}
   do
     ln -sfv $DOTPATH/$f $HOME/$f
@@ -192,6 +193,8 @@ deploy_dotfiles() {
 }
 
 initialize_dotfiles() {
+  e_newline
+  e_header "Initializing dotfiles..."
   detect_os
   bash $DOTPATH/etc/init/init.sh
 }
@@ -219,11 +222,12 @@ DOTFILES=(\
 )
 
 if echo "$-" | grep -q "i"; then
-  log_info "load as a vital"
+  log_info "load as a vital: $-"
   VITALIZED=1
   export VITALIZED
+  : return
 else
-  log_info "execute as a script"
+  log_info "execute as a script: $-"
   # echo AVALANCHE logo
   install_dotfiles
   e_newline
