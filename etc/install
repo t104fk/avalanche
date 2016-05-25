@@ -183,6 +183,7 @@ deploy_dotfiles() {
     exit 1
   fi
 
+  # TODO: too many nest if directory
   for f in ${DOTFILES[@]}
   do
     ln -sfv $DOTPATH/$f $HOME/$f
@@ -218,6 +219,7 @@ DOTFILES=(\
   .vimrc
 )
 
+log_info "$-"
 if echo "$-" | grep -q "i"; then
   log_info "load as a vital"
   VITALIZED=1
