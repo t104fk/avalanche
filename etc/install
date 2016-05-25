@@ -204,7 +204,7 @@ initialize_dotfiles() {
 install_dotfiles() {
 
   if [ ${DOWNLOADED:-0} = 1 ]; then
-    exit
+    return
   fi
 
   download_dotfiles
