@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Stop script if error or unknown valiable
+set -eu
+
 if [ -z "$DOTPATH" ]; then
   echo '$DOTPATH is not found' >&2
   exit 1

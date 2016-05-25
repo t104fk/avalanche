@@ -196,6 +196,12 @@ initialize_dotfiles() {
   bash $DOTPATH/etc/init/init.sh
 }
 
+install_dotfiles() {
+  download_dotfiles
+  deploy_dotfiles
+  initialize_dotfiles
+}
+
 # executions
 
 if [ -z "${DOTPATH:-}" ]; then
@@ -212,6 +218,16 @@ DOTFILES=(\
   .vimrc
 )
 
-download_dotfiles
-deploy_dotfiles
-initialize_dotfiles
+if echo "$-" | grep -q "i"; then
+  log_info "load as a vital"
+  VITALIZED=1
+  export VITALIZED
+else
+  log_info "execute as a script"
+  # echo AVALANCHE logo
+  install_dotfiles
+  e_newline
+  e_arrow "Restarting shell($SHELL)..."
+  exec "$SHELL"
+fi
+

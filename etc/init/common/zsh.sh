@@ -1,5 +1,10 @@
 #!/bin/bash
 
+set -eu
+# load vital library
+# vital is a symlink to etc/install and load helper functions
+source "$DOTPATH"/etc/lib/vital.sh
+
 if ! is_exists "zsh"; then
   case "$PLATFORM" in
     osx)
@@ -26,11 +31,11 @@ if ! contains "${SHELL:-}" "zsh"; then
     # child user
     chsh -s "$zsh_path" "$USER"
     log_pass "Change shell to $zsh_path for $USER successfully"
-    # root
-    chsh -s "$zsh_path"
+    # TODO: root
   else
     log_fail "$zsh_path: invalid path"
     exit 1
   fi
 fi
 
+log_pass "Success to initialize Zsh"
