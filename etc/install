@@ -193,6 +193,8 @@ deploy_dotfiles() {
 }
 
 initialize_dotfiles() {
+  e_newline
+  e_header "Initializing dotfiles..."
   detect_os
   bash $DOTPATH/etc/init/init.sh
 }
@@ -219,14 +221,13 @@ DOTFILES=(\
   .vimrc
 )
 
-log_info "$-"
 if echo "$-" | grep -q "i"; then
-  log_info "load as a vital"
+  log_info "load as a vital: $-"
   VITALIZED=1
   export VITALIZED
   : return
 else
-  log_info "execute as a script"
+  log_info "execute as a script: $-"
   # echo AVALANCHE logo
   install_dotfiles
   e_newline
