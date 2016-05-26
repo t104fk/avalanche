@@ -2,7 +2,6 @@
 
 # Stop script if error or unknown valiable
 set -eu
-echo $-
 source "$DOTPATH"/etc/lib/vital.sh
 
 if [ -z "$DOTPATH" ]; then
