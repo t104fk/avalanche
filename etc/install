@@ -241,5 +241,5 @@ install_dotfiles
 # TODO: do not work helpers here...
 #e_newline
 #e_arrow "Restarting shell($SHELL)..."
-exec "$SHELL"
+$SHELL -l
 
