@@ -13,7 +13,6 @@ done
 
 PACKAGES=(\
   git \
-  tmux \
   reattach-to-user-namespace \
   csshx \
   nkf \
