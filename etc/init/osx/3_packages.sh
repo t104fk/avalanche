@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -eu
+trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
+# brew list will be error status, so remove -e option
+set -u
 source "$DOTPATH"/etc/lib/vital.sh
 
 TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco')
@@ -11,16 +13,16 @@ do
 done
 
 PACKAGES=(\
-  git\
-  tmux\
-  reattach-to-user-namespace\
-  csshx\
-  nkf\
-  brew-cask\
-  htop\
-  peco\
-  wget\
-  jq\
+  git \
+  tmux \
+  reattach-to-user-namespace \
+  csshx \
+  nkf \
+  brew-cask \
+  htop \
+  peco \
+  wget \
+  jq \
   tree \
   watch \
   tig
@@ -30,6 +32,7 @@ do
   brew list $p >& /dev/null
   [ $? -eq 0 ] && continue
   brew install $p
+  e_done "Success to install $p"
 done
 
 brew cleanup
@@ -43,5 +46,5 @@ brew cleanup
 
 #brew cask cleanup
 
-log_pass "Success to install brew packages"
+log_pass "Success to install all packages"
 
