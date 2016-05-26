@@ -1,5 +1,6 @@
 #!/bin/bash
 
+trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 set -eu
 source "$DOTPATH"/etc/lib/vital.sh
 
@@ -8,7 +9,7 @@ if ! is_exists "mux"; then
     osx)
       if is_exists "brew"; then
         log_info "Install tmuxinator with Homebrew"
-        $(cd $DOTPATH && sudo gem install tmuxinator)
+        cd $DOTPATH && sudo gem install tmuxinator
       else
         log_fail "error: require: Homebrew"
         exit 1

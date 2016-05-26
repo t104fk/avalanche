@@ -1,5 +1,6 @@
 #!/bin/bash
 
+trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 set -eu
 # load vital library
 # vital is a symlink to etc/install and load helper functions
