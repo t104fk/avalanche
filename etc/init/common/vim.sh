@@ -9,5 +9,6 @@ if [ ! -d $HOME/.vim/bundle ]; then
   if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
     git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
   fi
+fi
 
 log_pass "Success to initialize Vim"
