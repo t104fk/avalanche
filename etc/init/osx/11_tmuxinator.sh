@@ -21,4 +21,6 @@ if ! is_exists "mux"; then
   esac
 fi
 
+curl -sL https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh > ~/.tmuxinator.zsh
+
 log_pass "Success to initialize tmuxinator"
