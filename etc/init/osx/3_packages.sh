@@ -1,6 +1,5 @@
 #!/bin/bash
 
-trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 # brew list will be error status, so remove -e option
 set -u
 source "$DOTPATH"/etc/lib/vital.sh
@@ -30,7 +29,10 @@ PACKAGES=(\
 for p in ${PACKAGES[@]}
 do
   brew list $p >& /dev/null
-  [ $? -eq 0 ] && continue
+  if [ $? -eq 0 ]; then
+    log_info "$p is already installed"
+    continue
+  fi
   brew install $p
   e_done "Success to install $p"
 done
