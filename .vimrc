@@ -6,9 +6,9 @@ filetype plugin indent off
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
   call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
 endif
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 source ~/.vim.local/.Shougo.vimrc
 
@@ -33,7 +33,6 @@ NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'sudo.vim'
-
 
 "set cursorline
 "augroup cch
@@ -104,5 +103,7 @@ source ~/.vim.local/.env.vimrc
 
 NeoBundle 'markcornick/vim-terraform'
 NeoBundle 'cespare/vim-toml'
+
+call neobundle#end()
 
 filetype plugin on
