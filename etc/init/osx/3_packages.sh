@@ -12,7 +12,6 @@ do
 done
 
 PACKAGES=(\
-  git \
   reattach-to-user-namespace \
   csshx \
   nkf \
