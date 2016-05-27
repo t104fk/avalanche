@@ -11,8 +11,3 @@ if [ -d $HOME/.nodebrew ];then
   PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
-GIT_DIR="/usr/local/Cellar/git"
-if [ -d $GIT_DIR ]; then
-  PATH=$GIT_DIR/`ls $GIT_DIR`/bin:$PATH
-fi
-
