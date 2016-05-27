@@ -163,6 +163,7 @@ detect_os() {
 
 download_dotfiles() {
   if [ -d "$DOTPATH" ]; then
+    # TODO: pull repo if exist
     log_warn "$DOTPATH: already exists"
     return 1
   fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+unlink ~/.git_template
+unlink ~/.path
+unlink ~/.peco
+unlink ~/.tigrc
+unlink ~/.tmux.conf
+unlink ~/.vim.local
+unlink ~/.vimrc
+
+if [ -z "${DOTPATH}" ]; then
+  DOTPATH=~/.dotfiles
+fi
+bash $DOTPATH/etc/install
+
