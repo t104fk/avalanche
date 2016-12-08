@@ -13,6 +13,6 @@ fi
 
 # adb command
 if [ -d $HOME/Library/Android/sdk/platform-tools ]; then
-  PATH=$HOME/Library/Android/sdk/platform-tools/adb
+  PATH=$HOME/Library/Android/sdk/platform-tools/adb:$PATH
 fi
 
