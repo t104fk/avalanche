@@ -16,3 +16,7 @@ if [ -d $HOME/Library/Android/sdk/platform-tools ]; then
   PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 fi
 
+if [ -d $HOME/.sdkman ]; then
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
