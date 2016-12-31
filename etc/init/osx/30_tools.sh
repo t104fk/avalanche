@@ -13,6 +13,7 @@ if is_exists "brew"; then
       #sudo easy_install seqdiag
       #sudo easy_install actdiag
       #sudo easy_install nwdiag
+      brew install libtool freetype fontconfig webp gd
       brew install graphviz
       ;;
     *)
