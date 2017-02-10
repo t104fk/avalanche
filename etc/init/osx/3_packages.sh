@@ -22,7 +22,8 @@ PACKAGES=(\
   jq \
   tree \
   watch \
-  tig
+  tig \
+  yarn
 )
 for p in ${PACKAGES[@]}
 do
