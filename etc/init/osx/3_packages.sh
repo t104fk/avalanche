@@ -23,7 +23,13 @@ PACKAGES=(\
   tree \
   watch \
   tig \
-  yarn
+  yarn \
+  libtool \
+  freetype \
+  fontconfig \
+  webp \
+  gd \
+  graphviz
 )
 for p in ${PACKAGES[@]}
 do
