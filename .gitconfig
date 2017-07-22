@@ -1,0 +1,6 @@
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[alias]
+  alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+  prune = fetch --prune
+  undo = reset --soft HEAD^
