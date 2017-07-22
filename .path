@@ -1,5 +1,10 @@
 #!/bin/bash
 
+is_exists() {
+ which "$1" >/dev/null 2>&1
+ return $?
+}
+
 # rbenv
 if [ -d $HOME/.rbenv ];then
   PATH="$HOME/.rbenv/bin:$PATH"
@@ -18,5 +23,9 @@ fi
 
 if [ -d $HOME/.sdkman ]; then
   source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
+if is_exists "go"; then
+  PATH=$PATH:/usr/local/opt/go/libexec/bin
 fi
 
