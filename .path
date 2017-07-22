@@ -26,6 +26,7 @@ if [ -d $HOME/.sdkman ]; then
 fi
 
 if is_exists "go"; then
-  PATH=$PATH:/usr/local/opt/go/libexec/bin
+  export GOPATH=$HOME/go
+  PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 fi
 
