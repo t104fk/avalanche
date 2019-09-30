@@ -8,7 +8,7 @@ source $HOME/.path
 __git_files() { _files }
 
 # tmuxinator
-source $HOME/.tmuxinator.zsh
+#source $HOME/.tmuxinator.zsh
 
 # functions
 ## history
