@@ -231,9 +231,7 @@ DOTFILES=(\
   .path \
   .peco \
   .tigrc \
-  .tmux.conf \
-  .vim.local \
-  .vimrc
+  .tmux.conf
 )
 
 # echo AVALANCHE logo

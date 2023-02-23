@@ -1,6 +1,0 @@
-NeoBundle 'kakkyz81/evervim'
-
-let g:evervim_devtoken=''
-" following is only when initialization.
-":EvervimSetup
-

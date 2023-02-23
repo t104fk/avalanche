@@ -1,1 +1,0 @@
-NeoBundle 'ekalinin/Dockerfile.vim'
