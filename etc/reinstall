@@ -14,5 +14,5 @@ fi
 
 rm -fr $DOTPATH
 
-curl -sL https://raw.githubusercontent.com/takasing/avalanche/master/etc/install | sh
+curl -sL https://raw.githubusercontent.com/t104fk/avalanche/master/etc/install | sh
 

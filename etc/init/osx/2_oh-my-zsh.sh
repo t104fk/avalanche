@@ -1,1 +1,0 @@
-../common/oh_my_zsh.sh

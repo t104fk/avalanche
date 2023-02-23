@@ -16,6 +16,7 @@ if [ -z "$PLATFORM" -o "$PLATFORM" = "unknown" ]; then
   exit 1
 fi
 
+for i in $DOTPATH/etc/init/common/*.sh
 for i in $DOTPATH/etc/init/$PLATFORM/*.sh
 do
   if [ -f "$i" ]; then

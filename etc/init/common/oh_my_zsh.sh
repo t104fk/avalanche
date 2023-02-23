@@ -17,7 +17,7 @@ fi
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ln -fs $DOTPATH/etc/oh_my_zsh/zshrc_me.zsh ~/.oh-my-zsh/custom/zshrc_me.zsh
-ln -fs $DOTPATH/etc/oh_my_zsh/takasing.zsh-theme ~/.oh-my-zsh/themes/takasing.zsh-theme
+ln -fs $DOTPATH/etc/oh_my_zsh/my.zsh-theme ~/.oh-my-zsh/themes/my.zsh-theme
 
 log_pass "Success to initialize oh my zsh"
 

@@ -8,7 +8,7 @@ source $HOME/.path
 __git_files() { _files }
 
 # tmuxinator
-#source $HOME/.tmuxinator.zsh
+source $HOME/.tmuxinator.zsh
 
 # functions
 ## history
@@ -29,7 +29,7 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # override theme
-ZSH_THEME="takasing"
+ZSH_THEME="my"
 export ZSH_THEME
 
 # tmux. must be last.

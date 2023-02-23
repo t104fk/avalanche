@@ -89,7 +89,6 @@ NeoBundle 'sudo.vim'
 "  set conceallevel=2 concealcursor=i
 "endif
 
-source ~/.vim.local/.hateblo.vimrc
 source ~/.vim.local/.evervim.vimrc
 source ~/.vim.local/.ruby.vimrc
 source ~/.vim.local/.python.vimrc

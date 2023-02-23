@@ -225,7 +225,7 @@ fi
 if [ -z "${DOTPATH:-}" ]; then
   DOTPATH=~/.dotfiles; export DOTPATH
 fi
-DOTFILES_GITHUB="https://github.com/takasing/avalanche.git"; export DOTFILES_GITHUB
+DOTFILES_GITHUB="https://github.com/t104fk/avalanche.git"; export DOTFILES_GITHUB
 DOTFILES=(\
   .git_template \
   .path \
@@ -233,8 +233,7 @@ DOTFILES=(\
   .tigrc \
   .tmux.conf \
   .vim.local \
-  .vimrc \
-  .ideavimrc
+  .vimrc
 )
 
 # echo AVALANCHE logo

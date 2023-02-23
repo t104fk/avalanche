@@ -13,10 +13,9 @@ done
 
 PACKAGES=(\
   reattach-to-user-namespace \
-  csshx \
+  # csshx \
   nkf \
   brew-cask \
-  htop \
   peco \
   wget \
   jq \
@@ -26,10 +25,7 @@ PACKAGES=(\
   yarn \
   libtool \
   freetype \
-  fontconfig \
-  webp \
-  gd \
-  graphviz
+  fontconfig
 )
 for p in ${PACKAGES[@]}
 do
@@ -43,15 +39,6 @@ do
 done
 
 brew cleanup
-
-#CASKS=(java6 java7 osxfuse chefdk)
-#for c in ${CASKS[@]}
-#do
-#  brew cask list $c >& /dev/null
-#  [ $? -ne 0 ] && brew cask install $c
-#done
-
-#brew cask cleanup
 
 log_pass "Success to install all packages"
 
