@@ -33,7 +33,7 @@ ZSH_THEME="my"
 export ZSH_THEME
 
 # tmux. must be last.
-if [ $SHLVL = 1 ]; then
-  tmux a || tmux -f $HOME/.tmux.conf
-fi
+# if [ $SHLVL = 1 ]; then
+#   tmux a || tmux -f $HOME/.tmux.conf
+# fi
 

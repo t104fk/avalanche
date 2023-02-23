@@ -14,3 +14,7 @@ is_exists() {
 #   PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # fi
 
+if is_exists "brew"; then
+  export BREW_PATH=/opt/homebrew
+  PATH=$PATH:/usr/local/opt/go/libexec/bin:$BREW_PATH/bin
+fi
