@@ -1,5 +1,5 @@
-# brew list will be error status, so remove -e option
-set -u
+trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
+set -eu
 source "$DOTPATH"/etc/lib/helpers
 
 TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco')
