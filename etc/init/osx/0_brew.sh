@@ -5,7 +5,7 @@ source "$DOTPATH"/etc/lib/helpers.sh
 
 if ! is_exists "brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  PATH=$PATH:/usr/local/opt/go/libexec/bin:$BREW_PATH/bin
+  PATH=$PATH:/usr/local/opt/go/libexec/bin:/opt/homebrew/bin
 else
   log_warn "Homebrew is already installed."
 fi
