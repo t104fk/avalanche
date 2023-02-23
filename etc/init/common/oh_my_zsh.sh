@@ -9,7 +9,7 @@ fi
 
 if [ -d "~/.oh-my-zsh" ]; then
   log_warn "oh my zsh is already installed"
-  exit
+  exit 0
 fi
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
