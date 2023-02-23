@@ -10,6 +10,8 @@ if ! is_exists "mux"; then
       if is_exists "brew"; then
         log_info "Install tmuxinator with Homebrew"
         cd $DOTPATH && sudo gem install tmuxinator
+        curl -sL https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh > ~/.tmuxinator.zsh
+        log_pass "Success to initialize tmuxinator"
       else
         log_fail "error: require: Homebrew"
         exit 1
@@ -20,7 +22,3 @@ if ! is_exists "mux"; then
       ;;
   esac
 fi
-
-curl -sL https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh > ~/.tmuxinator.zsh
-
-log_pass "Success to initialize tmuxinator"

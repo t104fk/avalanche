@@ -10,6 +10,7 @@ if ! is_exists "tmux"; then
       if is_exists "brew"; then
         log_info "Install tmux with Homebrew"
         brew install tmux
+        log_pass "Success to initialize tmux"
       else
         log_fail "error: require: Homebrew"
         exit 1
@@ -20,5 +21,3 @@ if ! is_exists "tmux"; then
       ;;
   esac
 fi
-
-log_pass "Success to initialize tmux"
