@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -eu
-source "$DOTPATH"/etc/lib/helpers.sh
+source "$DOTPATH"/etc/lib/helpers
 
 if ! is_exists "brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
