@@ -2,7 +2,7 @@
 
 # Stop script if error or unknown valiable
 set -eu
-source "$DOTPATH"/etc/lib/vital.sh
+source "$DOTPATH"/etc/lib/helpers.sh
 
 if [ -z "$DOTPATH" ]; then
   echo '$DOTPATH is not found' >&2

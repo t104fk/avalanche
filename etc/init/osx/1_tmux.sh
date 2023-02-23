@@ -2,7 +2,7 @@
 
 trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 set -eu
-source "$DOTPATH"/etc/lib/vital.sh
+source "$DOTPATH"/etc/lib/helpers.sh
 
 if ! is_exists "tmux"; then
   case "$PLATFORM" in

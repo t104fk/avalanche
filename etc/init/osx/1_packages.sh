@@ -2,7 +2,7 @@
 
 # brew list will be error status, so remove -e option
 set -u
-source "$DOTPATH"/etc/lib/vital.sh
+source "$DOTPATH"/etc/lib/helpers.sh
 
 TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco')
 for t in ${TAPS[@]}
