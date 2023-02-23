@@ -9,13 +9,11 @@ fi
 
 if [ -d "~/.oh-my-zsh" ]; then
   log_warn "oh my zsh is already installed"
-  exit 0
+  exit
+else
+  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  ln -fs $DOTPATH/etc/oh_my_zsh/zshrc_me.zsh ~/.oh-my-zsh/custom/zshrc_me.zsh
+  ln -fs $DOTPATH/etc/oh_my_zsh/my.zsh-theme ~/.oh-my-zsh/themes/my.zsh-theme
+  log_pass "Success to initialize oh my zsh"
 fi
-
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-ln -fs $DOTPATH/etc/oh_my_zsh/zshrc_me.zsh ~/.oh-my-zsh/custom/zshrc_me.zsh
-ln -fs $DOTPATH/etc/oh_my_zsh/my.zsh-theme ~/.oh-my-zsh/themes/my.zsh-theme
-
-log_pass "Success to initialize oh my zsh"
 
