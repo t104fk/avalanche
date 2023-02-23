@@ -1,3 +1,4 @@
+trap - ERR INT
 set +e
 source "$DOTPATH"/etc/lib/helpers
 
