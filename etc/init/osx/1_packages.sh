@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # brew list will be error status, so remove -e option
 set -u
 source "$DOTPATH"/etc/lib/helpers

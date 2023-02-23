@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ "x`git config user.name`" == "xSET_ME_LOCALLY" ]; then
   echo "fatal: user.name is not set locally."
   echo "please: git config user.name \$yourname"

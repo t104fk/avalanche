@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Stop script if error or unknown valiable
 set -eu
 source "$DOTPATH"/etc/lib/helpers

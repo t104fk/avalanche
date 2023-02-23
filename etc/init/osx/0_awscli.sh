@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if ! is_exists "aws"; then
   curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
   sudo installer -pkg AWSCLIV2.pkg -target /

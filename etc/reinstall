@@ -1,5 +1,3 @@
-#!/bin/bash
-
 unlink ~/.git_template
 unlink ~/.path
 unlink ~/.peco

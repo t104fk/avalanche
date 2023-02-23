@@ -1,5 +1,3 @@
-#!/bin/bash
-
 set -eu
 source "$DOTPATH"/etc/lib/helpers
 

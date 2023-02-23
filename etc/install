@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # helpers
 
 e_newline() {
