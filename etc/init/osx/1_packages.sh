@@ -1,5 +1,4 @@
-trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
-set -eu
+set +e
 source "$DOTPATH"/etc/lib/helpers
 
 TAPS=('homebrew/cask' 'homebrew/cask-versions')
@@ -25,9 +24,10 @@ PACKAGES=(\
   freetype \
   fontconfig
 )
+
 for p in ${PACKAGES[@]}
 do
-  brew list $p >& /dev/null
+  brew list $p
   if [ $? -eq 0 ]; then
     log_info "$p is already installed"
     continue
