@@ -18,6 +18,7 @@ for i in $DOTPATH/etc/init/common/*.sh
 do
   if [ -f "$i" ]; then
     log_info "$(e_arrow "$(basename "$i")")"
+    # use source not bash command to extend PATH of brew
     source $i
   else
     continue
