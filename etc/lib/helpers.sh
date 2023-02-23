@@ -213,5 +213,3 @@ install_dotfiles() {
   deploy_dotfiles
   initialize_dotfiles
 }
-
-$SHELL -l
