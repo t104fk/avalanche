@@ -7,7 +7,7 @@ if [ -z "$DOTPATH" ]; then
   exit 1
 fi
 
-if [ -d "~/.oh-my-zsh" ]; then
+if [ -d ~/.oh-my-zsh ]; then
   log_warn "oh my zsh is already installed"
   exit
 else
