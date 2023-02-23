@@ -2,7 +2,7 @@ trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 set -eu
 source "$DOTPATH"/etc/lib/helpers
 
-TAPS=('caskroom/cask' 'caskroom/versions' 'homebrew/versions' 'peco/peco')
+TAPS=('homebrew/cask' 'homebrew/cask-versions' 'peco/peco')
 for t in ${TAPS[@]}
 do
   exists=`brew tap | grep $t | wc -l`
