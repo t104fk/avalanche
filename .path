@@ -13,5 +13,7 @@ is_exists() {
 # fi
 
 if is_exists "brew"; then
-  PATH=$PATH:/usr/local/opt/go/libexec/bin:/opt/homebrew/bin
+  PATH=$PATH:/opt/homebrew/bin
 fi
+
+export GPG_TTY=$(tty)

@@ -23,7 +23,9 @@ PACKAGES=(\
   yarn \
   libtool \
   freetype \
-  fontconfig
+  fontconfig \
+  gnupg \
+  pinentry-mac
 )
 
 for p in ${PACKAGES[@]}
