@@ -17,6 +17,15 @@ if [ -z "$PLATFORM" -o "$PLATFORM" = "unknown" ]; then
 fi
 
 for i in $DOTPATH/etc/init/common/*.sh
+do
+  if [ -f "$i" ]; then
+    log_info "$(e_arrow "$(basename "$i")")"
+    bash $i
+  else
+    continue
+  fi
+done
+
 for i in $DOTPATH/etc/init/$PLATFORM/*.sh
 do
   if [ -f "$i" ]; then
