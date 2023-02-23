@@ -2,10 +2,10 @@ trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 set -eu
 source "$DOTPATH"/etc/lib/helpers
 
-if ! is_exists "tmux"; then
+if ! is_exists tmux; then
   case "$PLATFORM" in
     osx)
-      if is_exists "brew"; then
+      if is_exists brew; then
         log_info "Install tmux with Homebrew"
         brew install tmux
         log_pass "Success to initialize tmux"
