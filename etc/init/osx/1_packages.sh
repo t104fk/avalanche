@@ -1,3 +1,4 @@
+set +e
 source "$DOTPATH"/etc/lib/helpers
 
 TAPS=('homebrew/cask' 'homebrew/cask-versions')
