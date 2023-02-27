@@ -4,6 +4,7 @@ source "$DOTPATH"/etc/lib/helpers
 
 if ! is_exists n; then
  #curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | sudo bash -s lts
+ sudo chown -R 501:20 ~/.npm
  npm install -g n
 else
   log_warn "Node manager is already installed."
