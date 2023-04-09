@@ -25,7 +25,8 @@ PACKAGES=(\
   freetype \
   fontconfig \
   gnupg \
-  pinentry-mac
+  pinentry-mac \
+  python
 )
 
 for p in ${PACKAGES[@]}
